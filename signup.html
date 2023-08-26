@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <title>Sign Up</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background for the container */
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 100px; /* Adjust the margin as needed */
+  }
+
+  .form-group label {
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+  }
+  .form-control {
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background for form inputs */
+    color: black; /* Make the text readable */
+  }
+
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-weight: bold;
+  }
+        .navbar {
+            background-color: white;
+            /* Changed background color to white */
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            /* Added a subtle box shadow */
+        }
+
+        .navbar-logo {
+            color: black;
+            /* Changed font color to black */
+            font-size: 24px;
+            text-decoration: none;
+            padding-right: 20px;
+            /* Added right padding to create space */
+        }
+
+        .navbar-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar-links li {
+            margin-right: 20px;
+        }
+
+        .navbar-links a {
+            color: black;
+            /* Changed link color to black */
+            text-decoration: none;
+            padding: 8px 12px;
+            /* Added padding to create space around links */
+        }
+
+        .navbar-links a:hover {
+            color: #333;
+            /* Darker gray color on hover */
+        }
+
+        /* Styles for Sign In and Sign Up links */
+        .navbar-links li:nth-last-child(2) a,
+        .navbar-links li:last-child a {
+            color: black;
+            text-decoration: none;
+            padding: 8px 12px;
+        }
+
+        .navbar-links li:nth-last-child(2) a:hover,
+        .navbar-links li:last-child a:hover {
+            color: #333;
+
+            .border:hover {
+                border: 2px solid black;
+            }
+        }
+        body {
+    background-image: url('background.jpg'); /* Replace with the actual image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <img class="skypulse" src="SKYPULSE.jpeg" width="200px">
+        <ul class="navbar-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+           
+            
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="signin.html">Sign In</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <form class="px-4 py-3" action="your-signup-processing-script.php" method="post">
+            <div class="form-group">
+                <label for="licenseNo">License No</label>
+                <input type="text" class="form-control" id="licenseNo" name="licenseNo" required>
+            </div>
+            <div class="form-group">
+                <label for="orgName">Organization Name</label>
+                <input type="text" class="form-control" id="orgName" name="orgName" minlength="9" required>
+            </div>
+            <div class="form-group">
+
+                <label for="proofFile">Upload Proof (PDF or Image)</label>
+                <input type="file" class="form-control-file" id="proofFile" name="proofFile"
+                    accept=".pdf,.jpg,.jpeg,.png" required>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

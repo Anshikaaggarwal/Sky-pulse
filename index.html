@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css"
+        integrity="sha384-cCpPh3M2zEqd5tNuS6j4zwKdTJL1eNxQqiiIcLs3Xs/rRKK5xIvaWwKGj5O5kk2+" crossorigin="anonymous">
+    <title>Navigation Bar with Logo</title>
+    <style>
+        /* Basic styling for the navigation bar */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: white;
+            /* Changed background color to white */
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            /* Added a subtle box shadow */
+        }
+
+        .navbar-logo {
+            color: black;
+            /* Changed font color to black */
+            font-size: 24px;
+            text-decoration: none;
+            padding-right: 20px;
+            /* Added right padding to create space */
+        }
+
+        .navbar-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar-links li {
+            margin-right: 20px;
+        }
+
+        .navbar-links a {
+            color: black;
+            /* Changed link color to black */
+            text-decoration: none;
+            padding: 8px 12px;
+            /* Added padding to create space around links */
+        }
+
+        .navbar-links a:hover {
+            color: #333;
+            /* Darker gray color on hover */
+        }
+
+        /* Styles for Sign In and Sign Up links */
+        .navbar-links li:nth-last-child(2) a,
+        .navbar-links li:last-child a {
+            color: black;
+            text-decoration: none;
+            padding: 8px 12px;
+        }
+
+        .navbar-links li:nth-last-child(2) a:hover,
+        .navbar-links li:last-child a:hover {
+            color: #333;
+        }
+
+        .border {
+            border: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .border:hover {
+            border-color: black;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        .carousel-inner img {
+            width: 100%;
+            height: auto;
+        }
+
+        #offer-div {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 50px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+            color: white;
+            width: 60%;
+            margin: 20px auto;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        #next-button {
+            background-color: white;
+            color: darkblue;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        #next-button:hover {
+            background-color: lightgray;
+            color: darkblue;
+        }
+
+        body {
+            background-image: url('background.jpg');
+            /* Replace with the actual image path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <img src="SKYPULSE.jpeg" width="200px" class="navbar-logo">
+        <ul class="navbar-links">
+            <li><a href="#en">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#simulation-div">Simulation</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <div class="border">
+                <li><a href="signin.html">Sign In</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </div>
+        </ul>
+    </div>
+
+    <div class="container">
+
+    </div>
+    </div>
+    <div id="offer-div">
+        <h2>What we offer?</h2>
+        <p>
+            SkyPulse: Redefining space analysis by decoding energy usage through composition assessment. Offering
+            insights for sustainable space exploration. Furthermore, we predict ISRO lunar mission outcomes, enhancing
+            cosmic understanding. Experience the future of space innovation
+        </p>
+
+        <button id="next-button" onclick="location.href='res.html';">Next</button>
+        <hr>
+        <div id="simulation-div">
+            <h2>Experience the VR Model</h2>
+            <p>Explore our interactive VR model to visualize space concepts.</p>
+
+            <button id="simulation-button" class="btn btn-info form-control"
+                onclick="window.location.href='https://aayushi-sinha.github.io/VR_Model/';">Start Simulation</button>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

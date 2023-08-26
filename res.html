@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Resource</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('3.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .form-container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 400px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+            animation: fadeIn 1s ease;
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        select,
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .textbox-container {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .textbox-container label {
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .textbox-container input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+        }
+
+        button {
+            background: #007bff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .star {
+            position: fixed;
+            width: 6px;
+            height: 6px;
+            background-color: gold;
+            /* You can change this to gold or any other color */
+            border-radius: 50%;
+            pointer-events: none;
+            /* Prevent stars from interfering with clicks */
+            z-index: 9999;
+            /* Ensure stars are above other content */
+            animation: twinkle 1s infinite alternate;
+        }
+
+        @keyframes twinkle {
+            from {
+                opacity: 0.8;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="stars-container">
+
+        <div class="container">
+
+            <h1>Find Your Resource</h1>
+            <form>
+                <label for="planet">Name the planet you found something:</label>
+                <select id="planet" name="planet">
+
+                    <option value="Mercury">Mercury</option>
+                    <option value="Venus">Venus</option>
+                    <option value="Earth">Earth</option>
+                    <option value="Mars">Mars</option>
+                    <option value="Jupiter">Jupiter</option>
+                    <option value="Saturn">Saturn</option>
+                    <option value="Uranus">Uranus</option>
+                    <option value="Neptune">Neptune</option>
+                    <option value="Pluto">Pluto</option>
+                    <option value="other">Other</option>
+                </select>
+                <div class="textbox-container" id="textbox-container">
+                    <label for="otherPlanet">Enter the planet's name:</label>
+                    <input type="text" id="otherPlanet" name="otherPlanet" placeholder="Enter planet's name">
+                </div>
+                <h2>Resource Composition</h2>
+                <div class="composition">
+
+                    <label for="element1">First Element:</label>
+                    <select id="element1" name="element1">
+                        <option value="O">Oxygen</option>
+                        <option value="Mg">Magnesium</option>
+                        <option value="Si">Silicon</option>
+                        <option value="Fe">Iron</option>
+                        <option value="Ni">Nickel</option>
+                        <option value="Al">Aluminum</option>
+                        <option value="Ca">Calcium</option>
+                        <option value="S">Sulfur</option>
+                        <option value="Fe/O">Fe/O</option>
+                        <option value="Fe/Si">Fe/Si</option>
+                        <option value="Mg/Si">Mg/Si</option>
+                        <option value="Al/Si">Al/Si</option>
+                        <option value="Fe/Al">Fe/Al</option>
+                        <option value="Mg/Al">Mg/Al</option>
+
+                    </select>
+
+                    <div class="textbox">
+                        <label for="percentageElement1">Enter percentage composition:</label>
+                        <input type="number" id="percentageElement1" name="percentageElement1" placeholder="Percentage"
+                            step="0.01" min="0" max="100">
+                    </div>
+                    <label for="element2">Second Element:</label>
+                    <select id="element2" name="element2">
+                        <option value="O">Oxygen</option>
+                        <option value="Mg">Magnesium</option>
+                        <option value="Si">Silicon</option>
+                        <option value="Fe">Iron</option>
+                        <option value="Ni">Nickel</option>
+                        <option value="Al">Aluminum</option>
+                        <option value="Ca">Calcium</option>
+                        <option value="S">Sulfur</option>
+                        <option value="Fe/O">Fe/O</option>
+                        <option value="Fe/Si">Fe/Si</option>
+                        <option value="Mg/Si">Mg/Si</option>
+                        <option value="Al/Si">Al/Si</option>
+                        <option value="Fe/Al">Fe/Al</option>
+                        <option value="Mg/Al">Mg/Al</option>
+
+                    </select>
+
+                    <div class="textbox">
+                        <label for="percentageElement2">Enter percentage composition:</label>
+                        <input type="number" id="percentageElement2" name="percentageElement2" placeholder="Percentage"
+                            step="0.01" min="0" max="100">
+                    </div>
+                    <label for="element3">Third Element:</label>
+                    <select id="element3" name="element3">
+                        <option value="O">Oxygen</option>
+                        <option value="Mg">Magnesium</option>
+                        <option value="Si">Silicon</option>
+                        <option value="Fe">Iron</option>
+                        <option value="Ni">Nickel</option>
+                        <option value="Al">Aluminum</option>
+                        <option value="Ca">Calcium</option>
+                        <option value="S">Sulfur</option>
+                        <option value="Fe/O">Fe/O</option>
+                        <option value="Fe/Si">Fe/Si</option>
+                        <option value="Mg/Si">Mg/Si</option>
+                        <option value="Al/Si">Al/Si</option>
+                        <option value="Fe/Al">Fe/Al</option>
+                        <option value="Mg/Al">Mg/Al</option>
+
+                    </select>
+
+                    <div class="textbox">
+                        <label for="percentageElement4">Enter percentage composition:</label>
+                        <input type="number" id="percentageElement4" name="percentageElement4" placeholder="Percentage"
+                            step="0.01" min="0" max="100">
+                    </div>
+                    <label for="element4">Fourth Element:</label>
+                    <select id="element4" name="element1">
+                        <option value="O">Oxygen</option>
+                        <option value="Mg">Magnesium</option>
+                        <option value="Si">Silicon</option>
+                        <option value="Fe">Iron</option>
+                        <option value="Ni">Nickel</option>
+                        <option value="Al">Aluminum</option>
+                        <option value="Ca">Calcium</option>
+                        <option value="S">Sulfur</option>
+                        <option value="Fe/O">Fe/O</option>
+                        <option value="Fe/Si">Fe/Si</option>
+                        <option value="Mg/Si">Mg/Si</option>
+                        <option value="Al/Si">Al/Si</option>
+                        <option value="Fe/Al">Fe/Al</option>
+                        <option value="Mg/Al">Mg/Al</option>
+
+                    </select>
+
+                    <div class="textbox">
+                        <label for="percentageElement4">Enter percentage composition:</label>
+                        <input type="number" id="percentageElement4" name="percentageElement1" placeholder="Percentage"
+                            step="0.01" min="0" max="100">
+                    </div>
+                </div>
+                <button type="submit">Submit</button>
+
+
+        </div>
+    </div>
+    </form>
+    </div>
+
+    <script>
+        // Script for showing/hiding textbox based on planet selection
+        const planetSelect = document.getElementById('planet');
+        const otherPlanetTextbox = document.getElementById('otherPlanet');
+        const textboxContainer = document.getElementById('textbox-container');
+
+        planetSelect.addEventListener('change', function () {
+            if (planetSelect.value === 'other') {
+                textboxContainer.style.display = 'block';
+                otherPlanetTextbox.setAttribute('required', 'true');
+            } else {
+                textboxContainer.style.display = 'none';
+                otherPlanetTextbox.removeAttribute('required');
+            }
+        });
+
+        // Script for showing/hiding element textbox based on element selection
+        const elementSelect = document.getElementById('element1');
+        const elementPercentageTextbox = document.getElementById('percentageElement1');
+        const elementTextboxContainer = document.getElementById('element1-textbox-container');
+
+        elementSelect.addEventListener('change', function () {
+            if (elementSelect.value === 'other' || elementSelect.value.includes('/')) {
+                elementTextboxContainer.style.display = 'block';
+                elementPercentageTextbox.setAttribute('required', 'true');
+            } else {
+                elementTextboxContainer.style.display = 'none';
+                elementPercentageTextbox.removeAttribute('required');
+            }
+        });
+        // Add stars around cursor on click
+        document.addEventListener('click', function (event) {
+            const numStars = 10; // Number of stars to create
+            const starsContainer = document.querySelector('.stars-container'); // Get the container element
+
+            for (let i = 0; i < numStars; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+
+                const angle = (Math.PI * 2 * i) / numStars;
+                const radius = 20; // Distance from cursor
+
+                const x = event.clientX + radius * Math.cos(angle);
+                const y = event.clientY + radius * Math.sin(angle);
+
+                star.style.left = x + 'px';
+                star.style.top = y + 'px';
+
+                starsContainer.appendChild(star); // Append to the stars container
+
+                setTimeout(function () {
+                    star.remove();
+                }, 3000);
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
